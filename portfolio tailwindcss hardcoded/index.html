@@ -25,10 +25,10 @@
     </style>
 </head>
 <body class="bg-darkbg text-neutral-200 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
-
+ 
     <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-accent/10 rounded-full blob -z-10 animate-pulse"></div>
     <div class="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-secondary/5 rounded-full blob -z-10 mix-blend-screen"></div>
-
+ 
     <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
         <nav class="relative bg-neutral-950/90 backdrop-blur-md border border-neutral-700 p-2 rounded-sm flex justify-between items-center shadow-2xl overflow-hidden">
             <div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
@@ -37,7 +37,7 @@
             <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
             <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
             <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
-
+ 
             <div class="px-4 flex items-center gap-3 relative z-10">
                 <div class="w-3 h-3 bg-accent animate-pulse shadow-[0_0_10px_#b45309]"></div>
                 <a href="index.html" class="text-xl font-black tracking-widest text-neutral-300 font-mono uppercase">
@@ -67,12 +67,12 @@
                     </a>
                 </li>
             </ul>
-
+ 
             <button id="menu-btn" class="md:hidden px-4 text-xl focus:outline-none text-accent active:scale-90 transition-transform relative z-10">
-                <i class="fa-solid fa-gamepad" id="menu-icon"></i>
+                <i class="fa-solid fa-terminal" id="menu-icon"></i>
             </button>
         </nav>
-
+ 
         <div id="mobile-menu" class="hidden md:hidden mt-2 bg-neutral-950 border border-neutral-700 p-2 rounded-sm shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
             <ul class="flex flex-col font-mono text-sm font-bold tracking-widest uppercase relative z-10">
@@ -83,30 +83,255 @@
             </ul>
         </div>
     </header>
-
-    <main class="flex-grow flex items-center justify-center pt-32 px-6">
-        <div class="max-w-4xl text-center z-10">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none mb-6 text-white">
-                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-600 to-amber-700">Humphrey Huet</span>
-            </h1>
-            <p class="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 mb-8 min-h-[40px] font-mono">
-                > Initializing <span id="typing-text" class="text-white font-bold border-r-2 border-accent animate-pulse"></span>
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal">
-                <a href="projects.html" class="w-full sm:w-auto px-8 py-3 bg-accent hover:bg-amber-800 text-white font-bold font-mono tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(180,83,9,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 border border-accent">
-                    Execute Work <i class="fa-solid fa-play ml-2 text-xs"></i>
-                </a>
-                <a href="contact.html" class="w-full sm:w-auto px-8 py-3 border border-neutral-700 hover:border-accent bg-neutral-900/50 text-neutral-300 hover:text-white font-bold font-mono tracking-widest uppercase rounded-sm transition-all duration-300 active:scale-95">
-                    Establish Link
+ 
+    <main class="flex-grow pt-32 px-6">
+ 
+        <!-- HERO -->
+        <section class="flex items-center justify-center min-h-[70vh]">
+            <div class="max-w-4xl text-center z-10">
+                <div class="relative w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-8 reveal active">
+                    <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
+                    <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
+                    <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+                    <div class="relative w-full h-full rounded-full bg-neutral-950/80 border border-dashed border-neutral-700 flex flex-col items-center justify-center gap-1 overflow-hidden">
+                        <div class="absolute inset-0 rounded-full pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                        <i class="fa-solid fa-image text-lg text-neutral-600"></i>
+                        <span class="font-mono text-[8px] uppercase tracking-widest text-neutral-600">Photo</span>
+                    </div>
+                </div>
+                <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-4 reveal active">
+                    <span class="animate-pulse">●</span> Full-Stack Web Developer
+                </p>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none mb-6 text-white">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-600 to-amber-700">Humphrey Huet</span>
+                </h1>
+                <p class="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 mb-8 min-h-[40px] font-mono">
+                    > Building <span id="typing-text" class="text-white font-bold border-r-2 border-accent animate-pulse"></span>
+                </p>
+                <p class="max-w-2xl mx-auto text-neutral-400 font-mono text-sm sm:text-base mb-10 reveal active">
+                    I design and build fast, reliable web applications — from pixel-tight front-ends
+                    to the APIs and databases running underneath. Clean code, clean UI, no bloat.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal active">
+                    <a href="projects.html" class="w-full sm:w-auto px-8 py-3 bg-accent hover:bg-amber-800 text-white font-bold font-mono tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(180,83,9,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 border border-accent">
+                        Execute Work <i class="fa-solid fa-play ml-2 text-xs"></i>
+                    </a>
+                    <a href="contact.html" class="w-full sm:w-auto px-8 py-3 border border-neutral-700 hover:border-accent bg-neutral-900/50 text-neutral-300 hover:text-white font-bold font-mono tracking-widest uppercase rounded-sm transition-all duration-300 active:scale-95">
+                        Establish Link
+                    </a>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- STATS STRIP -->
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <div class="relative bg-neutral-950/80 backdrop-blur-md border border-neutral-800 rounded-sm grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-800 overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">30<span class="text-accent">+</span></p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Projects Shipped</p>
+                </div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">5<span class="text-accent">+</span></p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Years Coding</p>
+                </div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">12<span class="text-accent">+</span></p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Tech Stack Tools</p>
+                </div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">99.9<span class="text-accent">%</span></p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Uptime Delivered</p>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ABOUT SNIPPET / TERMINAL CARD -->
+        <section class="max-w-5xl mx-auto mb-24 grid md:grid-cols-2 gap-6 items-stretch reveal">
+            <div class="relative bg-cardbg border border-neutral-800 rounded-sm overflow-hidden">
+                <div class="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950/60">
+                    <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+                    <span class="ml-3 font-mono text-[10px] text-neutral-500 uppercase tracking-widest">whoami.sh</span>
+                </div>
+                <div class="p-6 font-mono text-sm text-neutral-400 space-y-2">
+                    <p><span class="text-accent">$</span> role <span class="text-white">Full-Stack Web Developer</span></p>
+                    <p><span class="text-accent">$</span> stack <span class="text-white">JS / React / Node / SQL</span></p>
+                    <p><span class="text-accent">$</span> focus <span class="text-white">Performance, UX, clean architecture</span></p>
+                    <p><span class="text-accent">$</span> status <span class="text-white">Open to new projects</span></p>
+                    <p class="pt-4 text-neutral-500 leading-relaxed">
+                        I turn ideas into working software — responsive interfaces, solid back-ends, and
+                        the deployment pipelines that keep it all running smoothly in production.
+                    </p>
+                </div>
+            </div>
+ 
+            <div class="relative bg-neutral-950/60 border border-neutral-800 rounded-sm p-8 flex flex-col justify-center">
+                <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+                <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+                <div class="relative w-full aspect-video mb-6 border border-dashed border-neutral-700 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden">
+                    <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                    <i class="fa-solid fa-image text-2xl text-neutral-600"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-600">headshot.jpg</span>
+                </div>
+                <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-3">// About</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Code that ships, not just compiles.</h2>
+                <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                    From first wireframe to production deploy, I build web experiences that are fast,
+                    accessible, and built to scale — whether that's a client site, an internal dashboard,
+                    or a full product from the ground up.
+                </p>
+                <a href="about.html" class="inline-flex items-center gap-2 text-accent font-mono text-xs uppercase tracking-widest hover:text-white transition-colors w-fit">
+                    Read Full Bio <i class="fa-solid fa-arrow-right text-[10px]"></i>
                 </a>
             </div>
-        </div>
+        </section>
+ 
+        <!-- TECH STACK -->
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-2 text-center">// Toolkit</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Tech Stack</h2>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-html5 text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">HTML5</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-css3-alt text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">CSS3</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-js text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">JavaScript</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-react text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">React</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-node-js text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Node.js</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-database text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">SQL</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-git-alt text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Git</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-figma text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Figma</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-docker text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Docker</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-aws text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">AWS</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-wind text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Tailwind</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-python text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Python</span>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- FEATURED PROJECTS PREVIEW -->
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-2">// Selected Work</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Featured Projects</h2>
+                </div>
+                <a href="projects.html" class="hidden sm:inline-flex items-center gap-2 text-neutral-400 hover:text-accent font-mono text-xs uppercase tracking-widest transition-colors">
+                    View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+ 
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
+                    <div class="relative w-full aspect-video mb-4 border border-dashed border-neutral-700 group-hover:border-neutral-600 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden transition-colors">
+                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                        <i class="fa-solid fa-image text-xl text-neutral-600"></i>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-neutral-600">project_01.png</span>
+                    </div>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Web App</span>
+                    <h3 class="text-lg font-bold text-white mb-2">E-Commerce Platform</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">
+                        A full-stack storefront with cart, checkout, and an admin dashboard for
+                        managing inventory in real time.
+                    </p>
+                    <span class="mt-auto font-mono text-xs text-neutral-500 group-hover:text-white transition-colors">React · Node · PostgreSQL</span>
+                </a>
+ 
+                <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
+                    <div class="relative w-full aspect-video mb-4 border border-dashed border-neutral-700 group-hover:border-neutral-600 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden transition-colors">
+                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                        <i class="fa-solid fa-image text-xl text-neutral-600"></i>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-neutral-600">project_02.png</span>
+                    </div>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Dashboard</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Analytics Console</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">
+                        A real-time data dashboard with live charts, filters, and exportable
+                        reports for internal teams.
+                    </p>
+                    <span class="mt-auto font-mono text-xs text-neutral-500 group-hover:text-white transition-colors">Vue · Express · Chart.js</span>
+                </a>
+ 
+                <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
+                    <div class="relative w-full aspect-video mb-4 border border-dashed border-neutral-700 group-hover:border-neutral-600 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden transition-colors">
+                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                        <i class="fa-solid fa-image text-xl text-neutral-600"></i>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-neutral-600">project_03.png</span>
+                    </div>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Web Design</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Agency Landing Site</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">
+                        A fast, animated marketing site built for conversion, with a perfect
+                        Lighthouse performance score.
+                    </p>
+                    <span class="mt-auto font-mono text-xs text-neutral-500 group-hover:text-white transition-colors">Next.js · Tailwind</span>
+                </a>
+            </div>
+ 
+            <a href="projects.html" class="sm:hidden mt-8 flex items-center justify-center gap-2 text-neutral-400 hover:text-accent font-mono text-xs uppercase tracking-widest transition-colors">
+                View All Projects <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </section>
+ 
+        <!-- CTA -->
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <div class="relative bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-neutral-800 rounded-sm p-10 md:p-14 text-center overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-accent"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent"></div>
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-4 relative z-10">Have a project in mind?</h2>
+                <p class="text-neutral-400 font-mono text-sm mb-8 relative z-10">Let's build something fast, functional, and worth showing off.</p>
+                <a href="contact.html" class="relative z-10 inline-block px-8 py-3 bg-accent hover:bg-amber-800 text-white font-bold font-mono tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(180,83,9,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 border border-accent">
+                    Establish Link <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </section>
+ 
     </main>
-
+ 
     <footer class="border-t border-neutral-900 bg-darkbg/40 py-6 text-center text-sm font-mono text-neutral-600 uppercase tracking-widest">
         <p>SYS.HUET // V.2026 // ONLINE</p>
     </footer>
-
+ 
     <script src="main.js"></script>
 </body>
 </html>
