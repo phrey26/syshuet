@@ -86,7 +86,6 @@
  
     <main class="flex-grow pt-32 px-6">
  
-        <!-- HERO -->
         <section class="flex items-center justify-center min-h-[70vh]">
             <div class="max-w-4xl text-center z-10">
                 <div class="relative w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-8 reveal active">
@@ -94,11 +93,12 @@
                     <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
                     <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
                     <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
-                    <div class="relative w-full h-full rounded-full bg-neutral-950/80 border border-dashed border-neutral-700 flex flex-col items-center justify-center gap-1 overflow-hidden">
-                        <div class="absolute inset-0 rounded-full pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
-                        <i class="fa-solid fa-image text-lg text-neutral-600"></i>
-                        <span class="font-mono text-[8px] uppercase tracking-widest text-neutral-600">Photo</span>
+                    
+                    <div class="relative w-full h-full rounded-full bg-neutral-950 border border-neutral-700 flex flex-col items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 rounded-full pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px] z-20"></div>
+                        <img src="assets/profile-photo.jpg" alt="Humphrey Huet" class="w-full h-full object-cover relative z-10">
                     </div>
+
                 </div>
                 <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-4 reveal active">
                     <span class="animate-pulse">●</span> Web Developer · Tarlac, Philippines
@@ -125,7 +125,6 @@
             </div>
         </section>
  
-        <!-- STATS STRIP -->
         <section class="max-w-5xl mx-auto mb-24 reveal">
             <div class="relative bg-neutral-950/80 backdrop-blur-md border border-neutral-800 rounded-sm grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-800 overflow-hidden">
                 <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
@@ -148,7 +147,6 @@
             </div>
         </section>
  
-        <!-- ABOUT SNIPPET / TERMINAL CARD -->
         <section class="max-w-5xl mx-auto mb-24 grid md:grid-cols-2 gap-6 items-stretch reveal">
             <div class="relative bg-cardbg border border-neutral-800 rounded-sm overflow-hidden">
                 <div class="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950/60">
@@ -173,11 +171,12 @@
             <div class="relative bg-neutral-950/60 border border-neutral-800 rounded-sm p-8 flex flex-col justify-center">
                 <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
                 <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
-                <div class="relative w-full aspect-video mb-6 border border-dashed border-neutral-700 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden">
-                    <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
-                    <i class="fa-solid fa-image text-2xl text-neutral-600"></i>
-                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-600">headshot.jpg</span>
+                
+                <div class="relative w-full aspect-video mb-6 border border-neutral-700 bg-neutral-900/60 rounded-sm overflow-hidden">
+                    <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px] z-20"></div>
+                    <img src="assets/headshot.jpg" alt="About Me" class="w-full h-full object-cover relative z-10">
                 </div>
+
                 <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-3">// About</p>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Code that ships, not just compiles.</h2>
                 <p class="text-neutral-400 text-sm leading-relaxed mb-6">
@@ -191,7 +190,6 @@
             </div>
         </section>
  
-        <!-- TECH STACK -->
         <section class="max-w-5xl mx-auto mb-24 reveal">
             <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-2 text-center">// Toolkit</p>
             <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Tech Stack</h2>
@@ -263,7 +261,6 @@
             </div>
         </section>
  
-        <!-- FEATURED PROJECTS PREVIEW -->
         <section class="max-w-5xl mx-auto mb-24 reveal">
             <div class="flex items-center justify-between mb-10">
                 <div>
@@ -278,11 +275,12 @@
             <div class="grid md:grid-cols-3 gap-6">
                 <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
                     <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
-                    <div class="relative w-full aspect-video mb-4 border border-dashed border-neutral-700 group-hover:border-neutral-600 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden transition-colors">
-                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
-                        <i class="fa-solid fa-image text-xl text-neutral-600"></i>
-                        <span class="font-mono text-[9px] uppercase tracking-widest text-neutral-600">hard_hat_hustle.png</span>
+                    
+                    <div class="relative w-full aspect-video mb-4 border border-neutral-700 group-hover:border-neutral-500 bg-neutral-900/60 rounded-sm overflow-hidden transition-colors">
+                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px] z-20"></div>
+                        <img src="assets/hard_hat_hustle.png" alt="Hard Hat Hustle Preview" class="w-full h-full object-cover relative z-10">
                     </div>
+
                     <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Web Game</span>
                     <h3 class="text-lg font-bold text-white mb-2">Hard Hat Hustle</h3>
                     <p class="text-neutral-500 text-sm leading-relaxed mb-4">
@@ -294,11 +292,12 @@
  
                 <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
                     <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
-                    <div class="relative w-full aspect-video mb-4 border border-dashed border-neutral-700 group-hover:border-neutral-600 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden transition-colors">
-                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
-                        <i class="fa-solid fa-image text-xl text-neutral-600"></i>
-                        <span class="font-mono text-[9px] uppercase tracking-widest text-neutral-600">game_modding.png</span>
+                    
+                    <div class="relative w-full aspect-video mb-4 border border-neutral-700 group-hover:border-neutral-500 bg-neutral-900/60 rounded-sm overflow-hidden transition-colors">
+                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px] z-20"></div>
+                        <img src="assets/game_modding.png" alt="Game Modding Preview" class="w-full h-full object-cover relative z-10">
                     </div>
+
                     <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Game Dev</span>
                     <h3 class="text-lg font-bold text-white mb-2">Indie Game Modding</h3>
                     <p class="text-neutral-500 text-sm leading-relaxed mb-4">
@@ -310,11 +309,12 @@
  
                 <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
                     <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
-                    <div class="relative w-full aspect-video mb-4 border border-dashed border-neutral-700 group-hover:border-neutral-600 bg-neutral-900/60 rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden transition-colors">
-                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
-                        <i class="fa-solid fa-image text-xl text-neutral-600"></i>
-                        <span class="font-mono text-[9px] uppercase tracking-widest text-neutral-600">digital_content.png</span>
+                    
+                    <div class="relative w-full aspect-video mb-4 border border-neutral-700 group-hover:border-neutral-500 bg-neutral-900/60 rounded-sm overflow-hidden transition-colors">
+                        <div class="absolute inset-0 pointer-events-none opacity-15 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100%_4px] z-20"></div>
+                        <img src="assets/digital_content.png" alt="Digital Content Preview" class="w-full h-full object-cover relative z-10">
                     </div>
+
                     <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Digital Design</span>
                     <h3 class="text-lg font-bold text-white mb-2">Digital Content Studio</h3>
                     <p class="text-neutral-500 text-sm leading-relaxed mb-4">
@@ -330,7 +330,6 @@
             </a>
         </section>
  
-        <!-- CTA -->
         <section class="max-w-5xl mx-auto mb-24 reveal">
             <div class="relative bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-neutral-800 rounded-sm p-10 md:p-14 text-center overflow-hidden">
                 <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
