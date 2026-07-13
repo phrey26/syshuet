@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS.HUET | Home</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <style type="text/tailwindcss">
+        @theme {
+            --color-darkbg: #0a0a0a; 
+            --color-cardbg: #171717; 
+            --color-accent: #b45309; 
+            --color-secondary: #a3a3a3; 
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .blob { filter: blur(80px); }
+    </style>
+</head>
+<body class="bg-darkbg text-neutral-200 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+ 
+    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-accent/10 rounded-full blob -z-10 animate-pulse"></div>
+    <div class="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-secondary/5 rounded-full blob -z-10 mix-blend-screen"></div>
+ 
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
+        <nav class="relative bg-neutral-950/90 backdrop-blur-md border border-neutral-700 p-2 rounded-sm flex justify-between items-center shadow-2xl overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+            
+            <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+            <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
+            <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
+            <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+ 
+            <div class="px-4 flex items-center gap-3 relative z-10">
+                <div class="w-3 h-3 bg-accent animate-pulse shadow-[0_0_10px_#b45309]"></div>
+                <a href="index.html" class="relative inline-block text-xl font-black tracking-widest text-neutral-300 font-mono uppercase transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(180,83,9,0.6)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full">
+                    SYS<span class="text-accent">.HUET</span>
+                </a>
+            </div>
+            
+            <ul class="hidden md:flex font-mono text-xs font-bold tracking-[0.2em] uppercase relative z-10">
+                <li>
+                    <a href="index.html" class="nav-item relative flex items-center h-12 px-6 bg-accent text-neutral-950 border-r border-neutral-950 transition-all active:scale-95 shadow-[inset_0_0_15px_rgba(0,0,0,0.4)]">
+                        <span class="text-neutral-950 animate-pulse mr-3">►</span><span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-item relative flex items-center h-12 px-6 bg-transparent text-neutral-400 border-r border-neutral-800 hover:bg-neutral-800 hover:text-white transition-all duration-200 active:scale-95 group">
+                        <span class="text-accent opacity-0 group-hover:opacity-100 transition-all mr-0 group-hover:mr-3 -ml-3 group-hover:ml-0 duration-200">►</span><span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html" class="nav-item relative flex items-center h-12 px-6 bg-transparent text-neutral-400 border-r border-neutral-800 hover:bg-neutral-800 hover:text-white transition-all duration-200 active:scale-95 group">
+                        <span class="text-accent opacity-0 group-hover:opacity-100 transition-all mr-0 group-hover:mr-3 -ml-3 group-hover:ml-0 duration-200">►</span><span>Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-item relative flex items-center h-12 px-6 bg-transparent text-neutral-400 hover:bg-neutral-800 hover:text-white transition-all duration-200 active:scale-95 group">
+                        <span class="text-accent opacity-0 group-hover:opacity-100 transition-all mr-0 group-hover:mr-3 -ml-3 group-hover:ml-0 duration-200">►</span><span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+ 
+            <button id="menu-btn" class="md:hidden flex items-center gap-2 px-4 py-2.5 rounded-sm font-mono text-xs font-bold uppercase tracking-widest bg-accent/10 border border-accent text-accent focus:outline-none active:scale-90 transition-all duration-200 relative z-10 shadow-[0_0_10px_rgba(180,83,9,0.3)]">
+                <i class="fa-solid fa-terminal" id="menu-icon"></i>
+                <span id="menu-label">Menu</span>
+            </button>
+        </nav>
+ 
+        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-neutral-950 border border-neutral-700 p-2 rounded-sm shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+            <ul class="flex flex-col font-mono text-sm font-bold tracking-widest uppercase relative z-10">
+                <li><a href="index.html" class="nav-item flex items-center px-4 py-4 bg-accent text-neutral-950 mb-1"><span class="mr-3 animate-pulse">►</span> Home</a></li>
+                <li><a href="about.html" class="nav-item flex items-center px-4 py-4 text-neutral-400 hover:bg-neutral-800 hover:text-white mb-1 group"><span class="text-accent opacity-0 group-hover:opacity-100 mr-0 group-hover:mr-3 transition-all">►</span> About</a></li>
+                <li><a href="projects.html" class="nav-item flex items-center px-4 py-4 text-neutral-400 hover:bg-neutral-800 hover:text-white mb-1 group"><span class="text-accent opacity-0 group-hover:opacity-100 mr-0 group-hover:mr-3 transition-all">►</span> Projects</a></li>
+                <li><a href="contact.html" class="nav-item flex items-center px-4 py-4 text-neutral-400 hover:bg-neutral-800 hover:text-white group"><span class="text-accent opacity-0 group-hover:opacity-100 mr-0 group-hover:mr-3 transition-all">►</span> Contact</a></li>
+            </ul>
+        </div>
+    </header>
+ 
+    <main class="flex-grow pt-32 px-6">
+ 
+        <section class="flex items-center justify-center min-h-[70vh]">
+            <div class="max-w-4xl text-center z-10">
+                <div class="relative w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-8 reveal active">
+                    <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
+                    <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
+                    <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+                    
+                    <div class="relative w-full h-full rounded-full bg-neutral-950 border border-neutral-700 flex flex-col items-center justify-center overflow-hidden [clip-path:circle(50%)] isolate">
+                        <img src="assets/profile-photo.jpg" alt="Humphrey Huet" class="w-full h-full object-cover relative z-10 opacity-100">
+                    </div>
+
+                </div>
+                <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-4 reveal active">
+                    <span class="animate-pulse">●</span> Web Developer <span class="animate-pulse">●</span> Software Developer <span class="animate-pulse">●</span> Game Developer <span class="animate-pulse">●</span> Game Designer <span class="animate-pulse">●</span> Data Analyst <span class="animate-pulse">●</span>
+                </p>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none mb-6 text-white">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-yellow-600 to-amber-700">Humphrey Huet</span>
+                </h1>
+                <p class="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 mb-8 min-h-[40px] font-mono">
+                    > Building <span id="typing-text" class="text-white font-bold border-r-2 border-accent animate-pulse"></span>
+                </p>
+                <p class="max-w-2xl mx-auto text-neutral-400 font-mono text-sm sm:text-base mb-10 reveal active">
+                    Primarily a web developer, crafting responsive, user-friendly sites and
+                    applications with HTML, CSS, JavaScript, React, and Vue.js — backed by
+                    back-end tech, SQL/NoSQL, and Firebase. Beyond the browser, I build software,
+                    design and develop games, and dig into data to turn numbers into insight.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal active">
+                    <a href="projects.html" class="w-full sm:w-auto px-8 py-3 bg-accent hover:bg-amber-800 text-white font-bold font-mono tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(180,83,9,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 border border-accent">
+                        Execute Work <i class="fa-solid fa-play ml-2 text-xs"></i>
+                    </a>
+                    <a href="contact.html" class="w-full sm:w-auto px-8 py-3 border border-neutral-700 hover:border-accent bg-neutral-900/50 text-neutral-300 hover:text-white font-bold font-mono tracking-widest uppercase rounded-sm transition-all duration-300 active:scale-95">
+                        Establish Link
+                    </a>
+                </div>
+            </div>
+        </section>
+ 
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <div class="relative bg-neutral-950/80 backdrop-blur-md border border-neutral-800 rounded-sm grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-800 overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">2<span class="text-accent">+</span></p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Years Freelancing</p>
+                </div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">16<span class="text-accent">+</span></p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Tools & Frameworks</p>
+                </div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">BSIT</p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">Web Dev Specialization</p>
+                </div>
+                <div class="p-6 text-center relative z-10">
+                    <p class="text-3xl font-black text-white font-mono">OPEN</p>
+                    <p class="text-[10px] mt-2 font-mono uppercase tracking-widest text-neutral-500">To Freelance Work</p>
+                </div>
+            </div>
+        </section>
+ 
+        <section class="max-w-5xl mx-auto mb-24 grid md:grid-cols-2 gap-6 items-stretch reveal">
+            <div class="relative bg-cardbg border border-neutral-800 rounded-sm overflow-hidden">
+                <div class="flex items-center gap-2 px-4 py-3 border-b border-neutral-800 bg-neutral-950/60">
+                    <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+                    <span class="ml-3 font-mono text-[10px] text-neutral-500 uppercase tracking-widest">whoami.sh</span>
+                </div>
+                <div class="p-6 font-mono text-sm text-neutral-400 space-y-2">
+                    <p><span class="text-accent">$</span> name <span class="text-white">Sir Humphrey Huey M. Huet</span></p>
+                    <p><span class="text-accent">$</span> role <span class="text-white">Web Developer</span></p>
+                    <p><span class="text-accent">$</span> stack <span class="text-white">JS / React / Vue / Node / Firebase</span></p>
+                    <p><span class="text-accent">$</span> education <span class="text-white">BSIT, Holy Angel University</span></p>
+                    <p><span class="text-accent">$</span> status <span class="text-white">Open to new projects</span></p>
+                    <p class="pt-4 text-neutral-500 leading-relaxed">
+                        I turn ideas into working software — responsive interfaces, solid back-ends, and
+                        the freelance hustle to see a project through from brief to deploy.
+                    </p>
+                </div>
+            </div>
+ 
+            <div class="relative bg-neutral-950/60 border border-neutral-800 rounded-sm p-8 flex flex-col justify-center">
+                <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+                <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+                
+                <div class="relative w-full aspect-video mb-6 border border-neutral-700 bg-neutral-900 rounded-sm overflow-hidden">
+                    <img src="assets/headshot.jpg" alt="About Me" class="w-full h-full object-cover relative z-10 opacity-100">
+                </div>
+
+                <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-3">// About</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Code that ships, not just compiles.</h2>
+                <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                    Currently pursuing a BS in Information Technology with a focus on web development,
+                    I build responsive sites and applications while freelancing in digital content
+                    creation and game programming — versatile work that keeps my skills sharp.
+                </p>
+                <a href="about.html" class="inline-flex items-center gap-2 text-accent font-mono text-xs uppercase tracking-widest hover:text-white transition-colors w-fit">
+                    Read Full Bio <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </section>
+ 
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-2 text-center">// Toolkit</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Tech Stack</h2>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-html5 text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">HTML5</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-css3-alt text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">CSS3</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-js text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">JavaScript</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-python text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Python</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-java text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Java</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-database text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">SQL</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-server text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">NoSQL</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-react text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">React.js</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-vuejs text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Vue.js</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-node-js text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Node.js</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-angular text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Angular</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-mobile-screen-button text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Flutter</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-fire text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Firebase</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-leaf text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">MongoDB</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-figma text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Figma</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-cube text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Blender</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-palette text-2xl text-neutral-500 group-hover:text-accent transition-colors"></i>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Aseprite</span>
+                </div>
+                <div class="group bg-neutral-950/60 border border-neutral-800 hover:border-accent rounded-sm p-5 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95">
+                    <svg viewBox="0 0 100 100" class="w-6 h-6 text-neutral-500 group-hover:text-accent transition-colors" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M74 28 A34 34 0 1 0 74 72" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+                        <circle cx="76" cy="27" r="10" fill="currentColor"/>
+                    </svg>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">Canva</span>
+                </div>
+            </div>
+        </section>
+ 
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <p class="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-2">// Selected Work</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Featured Projects</h2>
+                </div>
+                <a href="projects.html" class="hidden sm:inline-flex items-center gap-2 text-neutral-400 hover:text-accent font-mono text-xs uppercase tracking-widest transition-colors">
+                    View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+ 
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
+                    
+                    <div class="relative w-full aspect-video mb-4 border border-neutral-700 group-hover:border-neutral-500 bg-neutral-900 rounded-sm overflow-hidden transition-colors">
+                        <img src="assets/hard_hat_hustle.png" alt="Hard Hat Hustle Preview" class="w-full h-full object-cover relative z-10 opacity-100">
+                    </div>
+
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Web Game</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Hard Hat Hustle</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">
+                        A browser-based platformer built from scratch, refactored into clean
+                        HTML/CSS/JS and packaged for speedrunners to pick up and play.
+                    </p>
+                    <span class="mt-auto font-mono text-xs text-neutral-500 group-hover:text-white transition-colors">HTML5 · CSS3 · JavaScript</span>
+                </a>
+ 
+                <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
+                    
+                    <div class="relative w-full aspect-video mb-4 border border-neutral-700 group-hover:border-neutral-500 bg-neutral-900 rounded-sm overflow-hidden transition-colors">
+                        <img src="assets/coming_soon.png" alt="Game Modding Preview" class="w-full h-full object-cover relative z-10 opacity-100">
+                    </div>
+
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Game Dev</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Indie Game Modding</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">
+                        Freelance feature implementation and custom PC game modifications for
+                        indie and fan-made projects, built on solid programming logic.
+                    </p>
+                    <span class="mt-auto font-mono text-xs text-neutral-500 group-hover:text-white transition-colors">C# · Modding SDKs · Scripting</span>
+                </a>
+ 
+                <a href="projects.html" class="group relative bg-cardbg border border-neutral-800 hover:border-accent rounded-sm p-6 flex flex-col transition-all duration-300 active:scale-95">
+                    <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-700 group-hover:border-accent transition-colors"></div>
+                    
+                    <div class="relative w-full aspect-video mb-4 border border-neutral-700 group-hover:border-neutral-500 bg-neutral-900 rounded-sm overflow-hidden transition-colors">
+                        <img src="assets/coming_soon.png" alt="Digital Content Preview" class="w-full h-full object-cover relative z-10 opacity-100">
+                    </div>
+
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">Digital Design</span>
+                    <h3 class="text-lg font-bold text-white mb-2">Digital Content Studio</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">
+                        Freelance thumbnail design, video editing, and digital artwork for
+                        clients through Raket.ph — from brief to final delivery.
+                    </p>
+                    <span class="mt-auto font-mono text-xs text-neutral-500 group-hover:text-white transition-colors">Figma · Blender · Aseprite</span>
+                </a>
+            </div>
+ 
+            <a href="projects.html" class="sm:hidden mt-8 flex items-center justify-center gap-2 text-neutral-400 hover:text-accent font-mono text-xs uppercase tracking-widest transition-colors">
+                View All Projects <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </section>
+ 
+        <section class="max-w-5xl mx-auto mb-24 reveal">
+            <div class="relative bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-neutral-800 rounded-sm p-10 md:p-14 text-center overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+                <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-accent"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent"></div>
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-4 relative z-10">Have a project in mind?</h2>
+                <p class="text-neutral-400 font-mono text-sm mb-8 relative z-10">Let's build something fast, functional, and worth showing off.</p>
+                <a href="contact.html" class="relative z-10 inline-block px-8 py-3 bg-accent hover:bg-amber-800 text-white font-bold font-mono tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(180,83,9,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 border border-accent">
+                    Establish Link <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </section>
+ 
+    </main>
+ 
+    <footer class="border-t border-neutral-900 bg-darkbg/60 pt-12 pb-6 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="grid sm:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <a href="index.html" class="relative inline-block text-lg font-black tracking-widest text-neutral-300 font-mono uppercase transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(180,83,9,0.6)] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full">SYS<span class="text-accent">.HUET</span></a>
+                    <p class="text-neutral-500 text-sm mt-3 leading-relaxed">
+                        Web Developer, Software Developer, Game Developer,
+                        Game Designer, and Data Analyst.
+                    </p>
+                </div>
+                <div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-accent mb-4">Navigate</p>
+                    <ul class="space-y-2 font-mono text-xs uppercase tracking-widest text-neutral-500">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-mono text-xs uppercase tracking-widest text-accent mb-4">Connect</p>
+                    <ul class="space-y-2 font-mono text-xs uppercase tracking-widest text-neutral-500">
+                        <li class="flex items-center gap-2"><a href="contact.html#contact-form" class="mail-scroll-trigger flex items-center gap-2 hover:text-white transition-colors"><i class="fa-solid fa-envelope text-accent text-[10px]"></i> EMAIL</a></li>
+                        <li class="flex items-center gap-2"><a href="https://github.com/phrey26" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors"><i class="fa-brands fa-github text-accent text-[10px]"></i> GitHub</a></li>
+                        <li class="flex items-center gap-2"><a href="https://www.linkedin.com/in/sir-humphrey-huey-huet-89b8993b8/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-accent text-[10px]"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p class="text-neutral-600 text-xs font-mono tracking-widest uppercase text-center">© 2026 Sir Humphrey Huey Huet. All Rights Reserved.</p>
+                <p class="text-neutral-700 text-xs font-mono tracking-widest uppercase">SYS.HUET // V.2026 // ONLINE</p>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="main.js"></script>
+</body>
+</html>
