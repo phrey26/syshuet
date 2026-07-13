@@ -33,7 +33,7 @@
                 <li><a href="projects.html" class="nav-item relative flex items-center h-12 px-6 bg-accent text-neutral-950 border-r border-neutral-950 transition-all active:scale-95 shadow-[inset_0_0_15px_rgba(0,0,0,0.4)]"><span class="text-neutral-950 animate-pulse mr-3">►</span><span>Projects</span></a></li>
                 <li><a href="contact.html" class="nav-item relative flex items-center h-12 px-6 bg-transparent text-neutral-400 hover:bg-neutral-800 hover:text-white transition-all duration-200 active:scale-95 group"><span class="text-accent opacity-0 group-hover:opacity-100 transition-all mr-0 group-hover:mr-3 -ml-3 group-hover:ml-0 duration-200">►</span><span>Contact</span></a></li>
             </ul>
-            <button id="menu-btn" class="md:hidden px-4 text-xl focus:outline-none text-accent active:scale-90 transition-transform relative z-10"><i class="fa-solid fa-terminal" id="menu-icon"></i></button>
+            <button id="menu-btn" class="md:hidden flex items-center gap-2 px-4 py-2.5 rounded-sm font-mono text-xs font-bold uppercase tracking-widest bg-accent/10 border border-accent text-accent focus:outline-none active:scale-90 transition-all duration-200 relative z-10 shadow-[0_0_10px_rgba(180,83,9,0.3)]"><i class="fa-solid fa-terminal" id="menu-icon"></i><span id="menu-label">Menu</span></button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden mt-2 bg-neutral-950 border border-neutral-700 p-2 rounded-sm shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
@@ -211,7 +211,7 @@
                 <div>
                     <p class="font-mono text-xs uppercase tracking-widest text-accent mb-4">Connect</p>
                     <ul class="space-y-2 font-mono text-xs uppercase tracking-widest text-neutral-500">
-                        <li class="flex items-center lowercase gap-2"><a href="contact.html#contact-form" class="mail-scroll-trigger flex items-center gap-2 hover:text-white transition-colors"><i class="fa-solid fa-envelope text-accent text-[10px]"></i> humphreyhuet26@gmail.com</a></li>
+                        <li class="flex items-center gap-2"><a href="contact.html#contact-form" class="mail-scroll-trigger flex items-center gap-2 hover:text-white transition-colors"><i class="fa-solid fa-envelope text-accent text-[10px]"></i> EMAIL</a></li>
                         <li class="flex items-center gap-2"><a href="https://github.com/phrey26" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors"><i class="fa-brands fa-github text-accent text-[10px]"></i> GitHub</a></li>
                         <li class="flex items-center gap-2"><a href="https://www.linkedin.com/in/sir-humphrey-huey-huet-89b8993b8/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-accent text-[10px]"></i> LinkedIn</a></li>
                     </ul>
@@ -224,7 +224,6 @@
         </div>
     </footer>
  
-    <!-- Project Modal ("Linux window") -->
     <div id="project-modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 md:p-8">
         <div id="project-modal-backdrop" class="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
 
@@ -234,7 +233,6 @@
             <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-accent pointer-events-none z-20"></div>
             <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent pointer-events-none z-20"></div>
 
-            <!-- Titlebar -->
             <div class="relative flex items-center justify-between gap-3 px-4 py-2.5 bg-neutral-900 border-b border-neutral-700 shrink-0">
                 <div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
                 <div class="flex items-center gap-2 relative z-10 shrink-0">
@@ -246,7 +244,6 @@
                 <i class="fa-solid fa-terminal relative z-10 text-neutral-600 text-xs shrink-0"></i>
             </div>
 
-            <!-- Body: row (landscape) on desktop, column (portrait) on mobile -->
             <div class="flex-1 overflow-y-auto flex flex-col md:flex-row">
                 <div class="relative w-full aspect-video md:aspect-auto md:w-1/2 md:h-auto shrink-0 border-b md:border-b-0 md:border-r border-neutral-800 bg-neutral-950 overflow-hidden flex items-center justify-center p-3 md:p-5">
                     <div class="absolute inset-0 pointer-events-none opacity-[0.07] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
@@ -266,7 +263,6 @@
                 </div>
             </div>
 
-            <!-- Status bar -->
             <div class="shrink-0 px-4 py-1.5 bg-neutral-900 border-t border-neutral-800 flex items-center justify-between font-mono text-[10px] text-neutral-600 uppercase tracking-widest">
                 <span><span class="text-accent">●</span> Process Running</span>
                 <span>SYS.HUET // Archive_Viewer.exe</span>
