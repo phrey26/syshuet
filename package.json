@@ -1,13 +1,26 @@
 {
-  "name": "portfolio-tailwindcss-hardcoded",
+  "name": "syshuet",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "A creation of my portfolio by implementing tailwindcss without using any framework and its hardcoded",
   "scripts": {
+    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phrey26/syshuet.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/phrey26/syshuet/issues"
+  },
+  "homepage": "https://github.com/phrey26/syshuet#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
 }

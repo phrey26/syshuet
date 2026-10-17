@@ -1,0 +1,8 @@
+@import "tailwindcss" source("../");
+
+@theme {
+    --color-darkbg: #0a0a0a;
+    --color-cardbg: #171717;
+    --color-accent: #b45309;
+    --color-secondary: #a3a3a3;
+}

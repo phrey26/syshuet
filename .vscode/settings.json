@@ -1,0 +1,8 @@
+{
+  "liveServer.settings.root": "/src",
+  "files.associations": {
+    "**/src/css/input.css": "tailwindcss"
+  },
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "css.lint.vendorPrefix": "ignore"
+}
