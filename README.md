@@ -14,6 +14,10 @@ Run `npm run build` to generate minified `src/css/output.css`, then serve or dep
 
 Edit the theme in `src/css/input.css` and utility classes in the HTML or JavaScript. `src/css/output.css` is generated; rebuild it instead of editing it directly.
 
+## GitHub Pages
+
+In the repository's Settings → Pages, set the publishing source to **GitHub Actions**. Commit and push the changes to `main`. The workflow in `.github/workflows/pages.yml` installs dependencies, builds Tailwind CSS, and publishes `src/` as the site root. Check the repository's Actions tab for deployment results.
+
 ## JavaScript components
 
 `src/js/main.js` loads the matching modules in `src/js/core/`, `src/js/sections/`, and `src/js/effects/` based on the elements present on each page. Each module exports an idempotent `hydrate()` function that attaches behavior to existing HTML. This is progressive enhancement of static HTML; there is no framework or server-rendered component state.
