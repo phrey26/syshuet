@@ -16,6 +16,8 @@ Edit the theme in `src/css/input.css` and utility classes in the HTML or JavaScr
 
 ## GitHub Pages
 
+The root `index.html` redirects to `src/` when Pages publishes directly from the repository root, so it opens the portfolio instead of rendering this README.
+
 In the repository's Settings → Pages, set the publishing source to **GitHub Actions**. Commit and push the changes to `main`. The workflow in `.github/workflows/pages.yml` installs dependencies, builds Tailwind CSS, and publishes `src/` as the site root. Check the repository's Actions tab for deployment results.
 
 ## JavaScript components
